@@ -64,7 +64,7 @@ $r = mysqli_connect($host, $user, $pass);
                     echo '<a href="#login" onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width:auto;">Login</a>
                     <a href="#Register" onclick="document.getElementById(\'id02\').style.display=\'block\'" style="width:auto;">Register</a>';
                   }else {
-                    echo '<a href="Profile.php"  style="width:auto;">My Profile</a>
+                    echo '<a href="MyProfile.php"  style="width:auto;">My Profile</a>
                           <a href="LogOut.php"  style="width:auto;">Log Out</a>
                           <a href="MyCart.php"  style="width:auto;">My Cart</a>';
                   }
