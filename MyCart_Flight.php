@@ -38,7 +38,7 @@ if (!$r2) {
     echo "Cannot select database\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Database selected\n";
+    echo "Database selected \n";
 }
 
 
@@ -48,12 +48,8 @@ if (!$r2) {
 $query = 'SELECT FSchedule_ID, Flight_Name, Airline_Name, Start, End_d,
                  Depart_Location, Destination
                  FROM flights, flight_schedule
-                  WHERE 	FlightID_FK = Flight_ID AND
-                          Depart_Location ='.'"'. $_POST["Departure"].'" AND '.
-                          'Destination = '.'"'. $_POST["Destination"] .'" AND '.
-                          'Start >="'. $_POST["StartDate"].'" AND '.
-                          'End_d <="'. $_POST["EndDate"] .'" AND '.
-                          'Current_Capacity > 0';
+                  WHERE FSchedule_ID = "'.$_SESSION['flight_number'].'" AND '.
+                  'FlightID_FK = Flight_ID';
 
 $rs = mysqli_query($r, $query);
 
@@ -61,15 +57,15 @@ if (!$rs) {
     echo "Could not execute query: $query";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Query: $query executed\n";
+    echo "Query: $query executed \n";
 }
 
 
-echo '<table>';
+echo '<br><table>';
 while ($row = mysqli_fetch_assoc($rs)) {
 
 
-    echo '<tr><hr>'.'<input type="radio" name = "flight_number" id="radioButton" value ="'. $row['FSchedule_ID'] .'">'.
+    echo '<tr>'.'<input type="radio" name = "flight_number" id="radioButton" value ="'. $row['FSchedule_ID'] .'">'.
                 'Flight: ' .$row['Flight_Name'].'<br>'.
                 'Departure: '  .$row['Depart_Location'] . '   Departure Time: '. $row['Start'].'<br>'.
                 'Arrival: '.$row['Destination'].'   Arrival Time: '.$row['End_d'].'<br>'.

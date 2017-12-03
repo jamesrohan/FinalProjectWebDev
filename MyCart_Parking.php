@@ -47,8 +47,7 @@ if (!$r2) {
 $query = 'SELECT Park_ID,	Parking_Lot_Name	,Location	,Max_Capacity,	Available_Capacity,	Price
 
           FROM parking_locations
-          WHERE Available_Capacity > 0 AND '.
-          'Location ="' .$_POST["Parking_Location"]. '"';
+          WHERE Park_ID = "'.$_SESSION['park_id'].'"';
 
 $rs = mysqli_query($r, $query);
 
@@ -60,13 +59,13 @@ if (!$rs) {
 }
 
 
-echo '<table>';
+echo '<br><table>';
 while ($row = mysqli_fetch_assoc($rs)) {
 
 
 
 
-    echo '<tr><hr>'.'<input type="radio" name = "park_id" id="radioButton" value ="'. $row['Park_ID'] .'">'.
+    echo '<tr>'.'<input type="radio" name = "park_id" id="radioButton" value ="'. $row['Park_ID'] .'">'.
                 'Parking Lot: '. $row['Parking_Lot_Name']. '<br>'.
                 'Price:  $'.$row['Price'].'  Per Day<br>'.
                 'Location: '.$row['Location'].'<br>'.

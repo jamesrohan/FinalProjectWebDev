@@ -8,13 +8,14 @@
   <body>
     <?php
       session_start();
-      include 'showAvailFlights.php';
 
+      echo '<form action="MyCart.php" method= "post">';
+      include 'showAvailFlights.php';
       // If the user is logged in We show the Check Out and Add to Cart Buttons
       if( isset($_SESSION['login_user']) ){
-        echo '<button type="submit" > Check Out</button>
-              <button type="submit" > Add To Cart</button>';
+        echo '<button type="submit" > Add To Cart</button>';
       }
+      echo '</form>';
 
     ?>
 
