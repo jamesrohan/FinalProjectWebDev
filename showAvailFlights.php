@@ -5,12 +5,12 @@ $user = "root";
 $pass = "";
 $db = "finalproject";
 
-
+/*
 $_POST["StartDate"] = "2000-11-29 01:01:30"; //new DateTime("2000-11-29 01:01:30");
 $_POST["EndDate"] = "2000-11-30 01:01:30"; //new DateTime("2000-11-30 01:01:30");
 $_POST["Departure"]= "Atlanta";
 $_POST["Destination"]= "Mexico";
-
+*/
 
 
 $r = mysqli_connect($host, $user, $pass);

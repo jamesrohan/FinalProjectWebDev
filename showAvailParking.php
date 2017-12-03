@@ -7,7 +7,7 @@ $db = "finalproject";
 
 
 //$_POST["CarType"] = "SUV";
-$_POST["Parking_Location"] = "Atlanta";
+//$_POST["Parking_Location"] = "Atlanta";
 
 
 $r = mysqli_connect($host, $user, $pass);

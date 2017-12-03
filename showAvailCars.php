@@ -5,10 +5,10 @@ $user = "root";
 $pass = "";
 $db = "finalproject";
 
-
+/*
 $_POST["CarType"] = "SUV";
 $_POST["Location"] = "Atlanta";
-
+*/
 
 $r = mysqli_connect($host, $user, $pass);
 
