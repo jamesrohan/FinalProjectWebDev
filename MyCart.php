@@ -41,6 +41,23 @@
             include 'MyCart_Parking.php' ;
           }
 
+          echo '<form action="Remove_Flight.php" >
+                  <button type="submit" > Remove Flight</button>
+                </form>';
+
+          echo '<form action="Remove_Car.php" >
+                   <button type="submit" > Remove Car</button>
+                </form>';
+
+          echo '<form action="Remove_Parking.php" >
+                  <button type="submit" > Remove Parking</button>
+                </form>';
+
+          echo '<form action="CheckOut.php" >
+                        <button type="submit" > Check Out</button>
+                </form>';
+
+
     }else {
       echo "<h1>!!! Not Logged In Log In!!!!</h1>";
     }

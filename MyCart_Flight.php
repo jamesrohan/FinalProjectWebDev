@@ -1,5 +1,7 @@
 <?php
 
+//session_start();
+
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -46,7 +48,7 @@ if (!$r2) {
 
 
 $query = 'SELECT FSchedule_ID, Flight_Name, Airline_Name, Start, End_d,
-                 Depart_Location, Destination
+                 Depart_Location, Destination, Flight_Price
                  FROM flights, flight_schedule
                   WHERE FSchedule_ID = "'.$_SESSION['flight_number'].'" AND '.
                   'FlightID_FK = Flight_ID';
@@ -64,7 +66,7 @@ if (!$rs) {
 echo '<br><table>';
 while ($row = mysqli_fetch_assoc($rs)) {
 
-
+    $_SESSION['Flight_Price'] = $row['Flight_Price'];
     echo '<tr>'.'<input type="radio" name = "flight_number" id="radioButton" value ="'. $row['FSchedule_ID'] .'">'.
                 'Flight: ' .$row['Flight_Name'].'<br>'.
                 'Departure: '  .$row['Depart_Location'] . '   Departure Time: '. $row['Start'].'<br>'.

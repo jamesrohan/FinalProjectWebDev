@@ -1,5 +1,7 @@
 <?php
 
+//session_start();
+
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -63,7 +65,7 @@ echo '<br><table>';
 while ($row = mysqli_fetch_assoc($rs)) {
 
 
-
+    $_SESSION['Parking_Price']= $row['Price'];
 
     echo '<tr>'.'<input type="radio" name = "park_id" id="radioButton" value ="'. $row['Park_ID'] .'">'.
                 'Parking Lot: '. $row['Parking_Lot_Name']. '<br>'.
