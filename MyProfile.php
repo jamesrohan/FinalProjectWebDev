@@ -138,7 +138,7 @@
         }
         echo "</table>";
 
-
+        mysqli_close($r);
 
 
     }else{
