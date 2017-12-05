@@ -15,8 +15,11 @@
       if( isset($_SESSION['login_user']) ){
         echo '<button type="submit" >Add To Cart</button>';
       }
-
       echo '</form>';
+
+      echo '<form action="Booking.php" >
+              <button type="submit" > Home Page </button>
+            </form>';
 
 
 

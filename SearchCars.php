@@ -17,6 +17,11 @@
       }
       echo '</form >';
 
+
+      echo '<form action="Booking.php" >
+              <button type="submit" > Home Page </button>
+            </form>';
+
     ?>
 
   </body>

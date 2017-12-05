@@ -13,31 +13,31 @@
 
           if(isset($_POST['flight_number']) && !empty($_POST['flight_number']) ){
             $_SESSION['flight_number'] = $_POST['flight_number'];
-            echo 'Flight Number Selected is:'. $_SESSION['flight_number'].'<br>';
+            //echo 'Flight Number Selected is:'. $_SESSION['flight_number'].'<br>';
           }
 
           if(isset($_POST['car_id'])  && !empty($_POST['car_id'])){
             $_SESSION['car_id'] = $_POST['car_id'];
-            echo 'Car Number Selected is:'. $_SESSION['car_id'].'<br>';
+            //echo 'Car Number Selected is:'. $_SESSION['car_id'].'<br>';
           }
 
           if (isset($_POST['park_id']) && !empty($_POST['park_id']) ) {
             $_SESSION['park_id'] = $_POST['park_id'];
-            echo 'Parking Number Selected is:'. $_SESSION['park_id'].'<br>';
+            //echo 'Parking Number Selected is:'. $_SESSION['park_id'].'<br>';
           }
 
 
-          echo "<h2>Your Old Values: <br></h2>";
+          //echo "<h2>Your Old Values: <br></h2>";
           if(isset($_SESSION['flight_number'])){
-            echo 'Flight Number Selected is:'. $_SESSION['flight_number'].'<br>';
+            //echo 'Flight Number Selected is:'. $_SESSION['flight_number'].'<br>';
             include 'MyCart_Flight.php' ;
           }
           if(isset($_SESSION['car_id'])  ){
-              echo 'Car Number Selected is:'. $_SESSION['car_id'].'<br>';
+            //  echo 'Car Number Selected is:'. $_SESSION['car_id'].'<br>';
               include 'MyCart_Car.php' ;
           }
           if (isset($_SESSION['park_id']) ) {
-            echo 'Parking Number Selected is:'. $_SESSION['park_id'].'<br>';
+            //echo 'Parking Number Selected is:'. $_SESSION['park_id'].'<br>';
             include 'MyCart_Parking.php' ;
           }
 
@@ -58,11 +58,15 @@
                 </form>';
 
 
+
+
     }else {
       echo "<h1>!!! Not Logged In Log In!!!!</h1>";
     }
 
-
+    echo '<form action="Booking.php" >
+                  <button type="submit" > Home Page </button>
+          </form>'     ; 
 
    ?>
 

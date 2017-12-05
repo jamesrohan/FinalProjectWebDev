@@ -11,19 +11,19 @@ $db = "finalproject";
 $r = mysqli_connect($host, $user, $pass);
 
 if (!$r) {
-    echo "Could not connect to server\n";
+  //  echo "Could not connect to server\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Connection established\n";
+    //echo "Connection established\n";
 }
 
 $r2 = mysqli_select_db($r, $db);
 
 if (!$r2) {
-    echo "Cannot select database\n";
+  //  echo "Cannot select database\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Database selected\n";
+  //  echo "Database selected\n";
 }
 
 $query = 'SELECT Car_ID, 	Car_Brand_Make,	Car_Model_Name,
@@ -34,10 +34,10 @@ $query = 'SELECT Car_ID, 	Car_Brand_Make,	Car_Model_Name,
 $rs = mysqli_query($r, $query);
 
 if (!$rs) {
-    echo "Could not execute query: $query \n";
+  //  echo "Could not execute query: $query \n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Query: $query executed \n";
+  //  echo "Query: $query executed \n";
 }
 
 

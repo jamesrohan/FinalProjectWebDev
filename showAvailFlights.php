@@ -26,19 +26,19 @@ $r = mysqli_connect($host, $user, $pass);
 
 
 if (!$r) {
-    echo "Could not connect to server\n";
+  //  echo "Could not connect to server\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Connection established\n";
+  //  echo "Connection established\n";
 }
 
 $r2 = mysqli_select_db($r, $db);
 
 if (!$r2) {
-    echo "Cannot select database\n";
+  //  echo "Cannot select database\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Database selected\n";
+    //echo "Database selected\n";
 }
 
 
@@ -46,7 +46,7 @@ if (!$r2) {
 
 
 $query = 'SELECT FSchedule_ID, Flight_Name, Airline_Name, Start, End_d,
-                 Depart_Location, Destination
+                 Depart_Location, Destination, Flight_Price
                  FROM flights, flight_schedule
                   WHERE 	FlightID_FK = Flight_ID AND
                           Depart_Location ='.'"'. $_POST["Departure"].'" AND '.
@@ -58,10 +58,10 @@ $query = 'SELECT FSchedule_ID, Flight_Name, Airline_Name, Start, End_d,
 $rs = mysqli_query($r, $query);
 
 if (!$rs) {
-    echo "Could not execute query: $query";
+    //echo "Could not execute query: $query";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Query: $query executed\n";
+  //  echo "Query: $query executed\n";
 }
 
 
@@ -69,15 +69,16 @@ echo '<table>';
 while ($row = mysqli_fetch_assoc($rs)) {
 
 
-    echo '<tr><hr>'.'<input type="radio" name = "flight_number" id="radioButton" value ="'. $row['FSchedule_ID'] .'">'.
+    echo '<tr><hr> '.'<input type="radio" name = "flight_number" id="radioButton" value ="'. $row['FSchedule_ID'] .'">'.
                 'Flight: ' .$row['Flight_Name'].'<br>'.
+                'Price:  $'.$row['Flight_Price'].'<br>'.
                 'Departure: '  .$row['Depart_Location'] . '   Departure Time: '. $row['Start'].'<br>'.
                 'Arrival: '.$row['Destination'].'   Arrival Time: '.$row['End_d'].'<br>'.
                 'Airlines: '.$row['Airline_Name'].'<hr>'.
         '</tr>';
 
 }
-echo "</form>";
+echo "</table>";
 
 mysqli_close($r);
 

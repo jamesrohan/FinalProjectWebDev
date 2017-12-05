@@ -46,15 +46,17 @@ $r = mysqli_connect($host, $user, $pass);
     </head>
     <body>
 
+
+
       <?php
       if(!isset($_SESSION['login_user'])){
-        echo '<h1>User Not Logged In</h1>';
+        echo '<h6>User Not Logged In</h6>';
       }else {
-        echo '<h1>Sucessfull Login User ID: '.$_SESSION['login_user'] .'</h1>';
+        echo '<h6>Sucessfull Login User ID: '.$_SESSION['login_user'] .'</h6>';
       }
        ?>
 
-        <div>
+        <div >
             <div class="dropdown">
                 <button onclick="myFunction()" class="dropbtn">Account</button>
                 <div id="myDropdown" class="dropdown-content">
@@ -79,7 +81,7 @@ $r = mysqli_connect($host, $user, $pass);
                 <form class="modal-content animate" action="" method="post">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                        <img src="img_avatar2.gif"  alt="Avatar" class="avatar">
                     </div>
 
                     <div class="container">
@@ -102,12 +104,12 @@ $r = mysqli_connect($host, $user, $pass);
 
             <script>
                 // Get the modal
-                var modal = document.getElementById('id01');
+                var modal1 = document.getElementById('id01');
 
                 // When the user clicks anywhere outside of the modal, close it
                 window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
+                    if (event.target == modal1) {
+                        modal1.style.display = "none";
                     }
                 }
             </script>
@@ -140,7 +142,7 @@ $r = mysqli_connect($host, $user, $pass);
                 <form class="modal-content animate" action="Register.php" method="post">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                        <img src="img_avatar2.gif" alt="Avatar" class="avatar">
                     </div>
 
                     <div class="container">
@@ -236,7 +238,7 @@ $r = mysqli_connect($host, $user, $pass);
             </table>
             <label for="c_type">Car Type</label>
             <select id="c_type" name="CarType">
-                <option value="SUV">Suv </option>
+                <option value="SUV">SUV </option>
                 <option  value="Compact">Compact </option>
                 <option value="Mid-Sized">Mid-Sized </option>
                 <option value="Luxury">Luxury </option>

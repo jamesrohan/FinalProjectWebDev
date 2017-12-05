@@ -27,19 +27,19 @@ $r = mysqli_connect($host, $user, $pass);
 
 
 if (!$r) {
-    echo "Could not connect to server\n";
+    //echo "Could not connect to server\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Connection established\n";
+  //  echo "Connection established\n";
 }
 
 $r2 = mysqli_select_db($r, $db);
 
 if (!$r2) {
-    echo "Cannot select database\n";
+  //  echo "Cannot select database\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Database selected\n";
+  //  echo "Database selected\n";
 }
 
 
@@ -54,10 +54,10 @@ $query = 'SELECT Park_ID,	Parking_Lot_Name	,Location	,Max_Capacity,	Available_Ca
 $rs = mysqli_query($r, $query);
 
 if (!$rs) {
-    echo "Could not execute query: $query";
+  //  echo "Could not execute query: $query";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Query: $query executed\n";
+  //  echo "Query: $query executed\n";
 }
 
 

@@ -23,19 +23,19 @@ $r = mysqli_connect($host, $user, $pass);
 
 
 if (!$r) {
-    echo "Could not connect to server\n";
+    //echo "Could not connect to server\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Connection established\n";
+    //echo "Connection established\n";
 }
 
 $r2 = mysqli_select_db($r, $db);
 
 if (!$r2) {
-    echo "Cannot select database\n";
+    //echo "Cannot select database\n";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Database selected\n";
+    //echo "Database selected\n";
 }
 
 
@@ -43,7 +43,7 @@ if (!$r2) {
 
 
 $query = 'SELECT Car_ID, 	Car_Brand_Make,	Car_Model_Name,
-                  Car_Location,Car_Year, Car_Type
+                  Car_Location,Car_Year, Car_Type, Rental_Price
           FROM cars
           WHERE Available_Car_Capacity > 0 AND '.'Car_Type ="'. $_POST["CarType"] .'" AND '.
           'Car_Location ="' .$_POST["Location"]. '"';
@@ -51,10 +51,10 @@ $query = 'SELECT Car_ID, 	Car_Brand_Make,	Car_Model_Name,
 $rs = mysqli_query($r, $query);
 
 if (!$rs) {
-    echo "Could not execute query: $query";
+    //echo "Could not execute query: $query";
     trigger_error(mysqli_error($r), E_USER_ERROR);
 } else {
-    echo "Query: $query executed\n";
+    //echo "Query: $query executed\n";
 }
 
 
@@ -70,6 +70,8 @@ while ($row = mysqli_fetch_assoc($rs)) {
                 'Brand: '  .$row['Car_Brand_Make'] . '   Year: '.$row['Car_Year'].'<br>'.
 
                 'Pickup Location: '.$row['Car_Location'].'<br>'.
+
+                'Price: $'.$row['Rental_Price'].'  Per Day'.'<br>'.
 
                 '<hr>'.
         '</tr>';

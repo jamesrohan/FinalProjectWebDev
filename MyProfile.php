@@ -23,19 +23,19 @@
 
 
     if (!$r) {
-        echo "Could not connect to server\n";
+      //  echo "Could not connect to server\n";
         trigger_error(mysqli_error($r), E_USER_ERROR);
     } else {
-        echo "Connection established\n";
+      //  echo "Connection established\n";
     }
 
     $r2 = mysqli_select_db($r, $db);
 
     if (!$r2) {
-        echo "Cannot select database\n";
+      //  echo "Cannot select database\n";
         trigger_error(mysqli_error($r), E_USER_ERROR);
     } else {
-        echo "Database selected\n";
+        //echo "Database selected\n";
     }
 
 
@@ -45,9 +45,9 @@
         $rs = mysqli_query($r, $queryUserInfo);
 
               if($rs){
-                echo "<br> Query $queryUserInfo Executed <br>";
+                //echo "<br> Query $queryUserInfo Executed <br>";
               }else {
-                echo "<br> Query $queryUserInfo Not Executed <br>";
+                //echo "<br> Query $queryUserInfo Not Executed <br>";
               }
         echo "<h1>User Information: </h1> ";
         echo "<table>";
@@ -68,11 +68,11 @@
         $rs = mysqli_query($r, $queryCarPurchaseInfo);
 
               if($rs){
-                echo "<br> Query $queryCarPurchaseInfo Executed <br>";
+              //  echo "<br> Query $queryCarPurchaseInfo Executed <br>";
               }else {
-                echo "<br> Query $queryCarPurchaseInfo Not Executed <br>";
+                //echo "<br> Query $queryCarPurchaseInfo Not Executed <br>";
               }
-        echo "<h1>Car Rental Information Information: </h1> ";
+        echo "<h1>Car Rental Information: </h1> ";
         echo "<table>";
         while ($row = mysqli_fetch_assoc($rs)) {
           echo "<tr><hr> Car Name: '$row[Car_Brand_Make]'  '   '  '$row[Car_Model_Name]'
@@ -96,9 +96,9 @@
         $rs = mysqli_query($r, $queryFlightPurchaseInfo);
 
               if($rs){
-                echo "<br> Query $queryFlightPurchaseInfo Executed <br>";
+                //echo "<br> Query $queryFlightPurchaseInfo Executed <br>";
               }else {
-                echo "<br> Query $queryFlightPurchaseInfo Not Executed <br>";
+                //echo "<br> Query $queryFlightPurchaseInfo Not Executed <br>";
               }
         echo "<h1>Flight Purchase Information Information: </h1> ";
         echo "<table>";
@@ -123,9 +123,9 @@
         $rs = mysqli_query($r, $queryParkingPurchaseInfo);
 
               if($rs){
-                echo "<br> Query $queryParkingPurchaseInfo Executed <br>";
+              //  echo "<br> Query $queryParkingPurchaseInfo Executed <br>";
               }else {
-                echo "<br> Query $queryParkingPurchaseInfo Not Executed <br>";
+              //  echo "<br> Query $queryParkingPurchaseInfo Not Executed <br>";
               }
         echo "<h1>Parking Rental Information Information: </h1> ";
         echo "<table>";
@@ -138,14 +138,20 @@
         }
         echo "</table>";
 
+        
+
         mysqli_close($r);
 
 
     }else{
       echo "<h1>Log In!!!!! User is not Logged In!!!!</h1>";
+
+
     }
 
-
+    echo '<form action="Booking.php" >
+            <button type="submit" > Home Page </button>
+          </form>';
 
      ?>
 

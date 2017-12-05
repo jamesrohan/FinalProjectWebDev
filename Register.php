@@ -22,19 +22,19 @@
 
 
           if (!$r) {
-              echo "Could not connect to server\n";
+            //  echo "Could not connect to server\n";
               trigger_error(mysqli_error($r), E_USER_ERROR);
           } else {
-              echo "Connection established\n";
+              //echo "Connection established\n";
           }
 
           $r2 = mysqli_select_db($r, $db);
 
           if (!$r2) {
-              echo "Cannot select database\n";
+              //echo "Cannot select database\n";
               trigger_error(mysqli_error($r), E_USER_ERROR);
           } else {
-              echo "Database selected\n";
+            //  echo "Database selected\n";
           }
 
           //Check if User Email already Exists
@@ -49,8 +49,8 @@
 
 
           if($count ==1 ){
-            echo "<br>Email ID is registered, use another Email";
-          }elseif($count != 1){
+            echo "<h1><br>Email ID  " .$_POST['email']."  is registered, use another Email</h1>";
+          }elseif($count == 0){
 
                   $queryRegisterUser = "INSERT INTO users
                                         ( User_Email, User_Fname, User_Lname, User_Password)
@@ -60,16 +60,21 @@
                   $rs = mysqli_query($r, $queryRegisterUser);
 
                   if($rs){
-                    echo "User Sucessfully Inserted".$_POST['email'].$_POST['fname'].
-                            $_POST['lname'].$_POST['psw'];
-                      echo "<br>Registration Successfull! Welcome  $_POST[fname]".'  '.$_POST['lname'] ;
+                    //echo "User Sucessfully Inserted".$_POST['email'].$_POST['fname'].
+                            //$_POST['lname'].$_POST['psw'];
+                      echo "<h1><br>Registration Successfull! Welcome  $_POST[fname]".'  '.$_POST['lname'].
+                          '<br> Please Log In:<a style = "color:yellow;" href="Booking.php"> Log In</h1>';
                   }else {
-                    echo "Registration Uncessfull";
+                    echo "<h1>Registration Uncessfull DB Err</h1>";
                   }
+
 
         }//End Else
           mysqli_close($r);
 
+          echo '<form action="Booking.php" >
+                  <button type="submit" > Home Page </button>
+                </form>';
 
 
 
