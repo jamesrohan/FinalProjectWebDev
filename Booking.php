@@ -189,7 +189,7 @@ $r = mysqli_connect($host, $user, $pass);
 
         </div>
 
-       <div>
+       <div class="contain">
            <h2>Flights</h2>
 
            <form action="SearchFlights.php" method="post">
@@ -215,15 +215,16 @@ $r = mysqli_connect($host, $user, $pass);
 
               <input type="checkbox"> Roundtrip</input>
               <br>
-              <button type="submit" id="search_flight"> Search Flights</button>
+              <button type="submit" id="search_flight" class="bsize"> Search Flights</button>
             </form>
+       </div>
 
             <hr/>
 
 
 
 
-
+      <div class="contain">
           <h2> Cars </h2>
 
           <form action="SearchCars.php" method="post">
@@ -244,27 +245,21 @@ $r = mysqli_connect($host, $user, $pass);
                 <option value="Luxury">Luxury </option>
             </select>
             <br>
-            <button type="submit" id="search_cars"> Search Cars </button>
+            <button type="submit" id="search_cars" class="bsize"> Search Cars </button>
           </form>
+      </div>
 
+      <hr>
 
-
-
-
-
-
-            <hr>
-
+      <div class="contain">
             <h2> Parking</h2>
 
 
             <form  action="SearchParking.php" method="post">
               <Label>Location</Label><input name="Parking_Location"type="text">
-             <button type="submit" id="search_parking">Search Parking</button>
+             <button type="submit" id="search_parking" class="bsize">Search Parking</button>
             </form>
+      </div>
 
-
-
-       </div>
     </body>
     </html>

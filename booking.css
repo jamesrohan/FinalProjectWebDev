@@ -149,6 +149,21 @@ span.psw {
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
+.contain{
+    width: 28%;
+    background-color: #fefefe;
+    margin: 2% auto 2% auto;
+    opacity: .9;
+}
+
+.bsize{
+    width: 20%;
+    margin-left: 78%;
+    opacity: 1.0;
+}
+
+
+
 /* The Close Button (x) */
 .close {
     position: absolute;
