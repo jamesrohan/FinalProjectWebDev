@@ -5,7 +5,6 @@ $host = "localhost";
 $user = "root";
 $pass = "";
 $db = "finalproject";
-
 $r = mysqli_connect($host, $user, $pass);
 
     //Connection Established and LogIn hit
