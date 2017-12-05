@@ -52,6 +52,7 @@ while ($row = mysqli_fetch_assoc($rs)) {
                 'Brand: '  .$row['Car_Brand_Make'] . '   Year: '.$row['Car_Year'].'<br>'.
 
                 'Pickup Location: '.$row['Car_Location'].'<br>'.
+                'Rental Price: $'.$row['Rental_Price'].
 
                 '<hr>'.
         '</tr>';

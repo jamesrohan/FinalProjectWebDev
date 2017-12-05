@@ -19,18 +19,18 @@
           $_SESSION['User_Total'] = 0;
 
           if(isset($_SESSION['flight_number'])){
-            echo 'Flight Number Selected is:'. $_SESSION['flight_number'].'<br>';
+          //  echo 'Flight Number Selected is:'. $_SESSION['flight_number'].'<br>';
             include 'MyCart_Flight.php' ;
             //$flight_price = $_SESSION['Flight_Price'];
 
           }
           if(isset($_SESSION['car_id'])  ){
-              echo 'Car Number Selected is:'. $_SESSION['car_id'].'<br>';
+            //  echo 'Car Number Selected is:'. $_SESSION['car_id'].'<br>';
               include 'MyCart_Car.php' ;
               //$car_price = $_SESSION['Car_Price'];
           }
           if (isset($_SESSION['park_id']) ) {
-            echo 'Parking Number Selected is:'. $_SESSION['park_id'].'<br>';
+            //echo 'Parking Number Selected is:'. $_SESSION['park_id'].'<br>';
             include 'MyCart_Parking.php' ;
             //$park_price = $_SESSION['Parking_Price'];
           }
@@ -61,7 +61,9 @@
       echo "<h1>!!! Not Logged In Log In!!!!</h1>";
     }
 
-
+    echo '<form action="Booking.php" >
+            <button type="submit" > Home Page </button>
+          </form>';
 
    ?>
 
