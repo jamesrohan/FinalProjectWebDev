@@ -154,6 +154,7 @@ span.psw {
     background-color: #fefefe;
     margin: 2% auto 2% auto;
     opacity: .9;
+    border-radius: 5px;
 }
 
 .bsize{

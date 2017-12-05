@@ -62,11 +62,30 @@
                   if($rs){
                     //echo "User Sucessfully Inserted".$_POST['email'].$_POST['fname'].
                             //$_POST['lname'].$_POST['psw'];
-                      echo "<h1><br>Registration Successfull! Welcome  $_POST[fname]".'  '.$_POST['lname'].
-                          '<br> Please Log In:<a style = "color:yellow;" href="Booking.php"> Log In</h1>';
+                      echo "<h1 ><br>Registration Successfull! Welcome  $_POST[fname]".'  '.$_POST['lname'].
+                          '</h1>';
+
+                          $query = 'SELECT UserID_PK
+                                           FROM users
+                                            WHERE User_Email ="'.$_POST['email'].'"';
+                          //Execute Query
+                          $rs = mysqli_query($r, $query);
+                          $row = mysqli_fetch_assoc($rs);
+                          $count = mysqli_num_rows($rs);
+
+                          if($count == 1) {
+                            $_SESSION['login_user'] = $row['UserID_PK'];
+                            echo "<h2>Sucessfull Log In</h2>";
+                            //header("location: Booking.php");
+                          }//End If Count
+
+
                   }else {
                     echo "<h1>Registration Uncessfull DB Err</h1>";
                   }
+
+
+
 
 
         }//End Else
