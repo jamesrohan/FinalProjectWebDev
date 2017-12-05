@@ -141,6 +141,10 @@
 
   mysqli_close($r);
 
+  echo '<form action="Booking.php" >
+          <button type="submit" > Home Page </button>
+        </form>';
+
   ?>
 
 
